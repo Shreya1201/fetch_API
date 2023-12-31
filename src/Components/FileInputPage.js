@@ -117,7 +117,6 @@ const FileInputPage = () => {
       newDisplayedFields.push(field);
       setDisplayedFields(newDisplayedFields);
     } else {
-      // If field is already in displayedFields, remove it
       setDisplayedFields(newDisplayedFields.filter((f) => f !== field));
     }
   };
@@ -127,10 +126,8 @@ const FileInputPage = () => {
     const newDisplayedFields = [...displayedFields];
 
     if (direction === "add") {
-      // Add selected fields from Available Fields to Displayed Fields
       setDisplayedFields([...newDisplayedFields, ...newAvailableFields]);
     } else if (direction === "remove") {
-      // Remove selected fields from Displayed Fields to Available Fields
       setDisplayedFields(
         newDisplayedFields.filter(
           (field) => !newAvailableFields.includes(field)
@@ -138,7 +135,6 @@ const FileInputPage = () => {
       );
     }
 
-    // Clear availableFields
     setAvailableFields([]);
   };
 

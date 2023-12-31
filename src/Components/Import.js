@@ -145,7 +145,6 @@ const StyledTable = styled.table`
   }
 `;
 
-// Function to filter data based on selected fields
 const filterDataByFields = (data, selectedFields) => {
   if (!data || !selectedFields || selectedFields.length === 0) {
     return [];
@@ -235,7 +234,6 @@ const Import = () => {
       const fileContent = await fetchFileContent(file);
       dataToSend.file = fileContent;
 
-      // Check if dataToSend.file is an array before filtering
       if (!Array.isArray(dataToSend.file)) {
         console.error("File content is not an array.");
         return;
@@ -287,7 +285,7 @@ const Import = () => {
     } else if (extension === "json") {
       return "json";
     } else {
-      return ""; // Unsupported file type
+      return "";
     }
   };
 
@@ -330,7 +328,6 @@ const Import = () => {
   };
 
   const handleCancel = () => {
-    // Clear input data if needed
     setFile(null);
     setFields([]);
     setDisplayedFields([]);
